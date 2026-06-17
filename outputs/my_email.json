@@ -1,0 +1,14 @@
+{
+  "scenario_id": "CUSTOM",
+  "strategy": "structured",
+  "intent": "Follow up after a product demo",
+  "tone": "Formal",
+  "key_facts": [
+    "The demo was held on Monday",
+    "The client asked for pricing details",
+    "The proposal should be shared by Friday",
+    "The client is interested in the automation dashboard"
+  ],
+  "prompt": "[SYSTEM]\nYou are a professional business email writer. Follow instructions exactly and use only provided information.\n\n[HUMAN]\n## Task\nGenerate one complete email based on the structured input below.\n\n## Input\nIntent: Follow up after a product demo\n\nKey Facts (every fact must appear naturally in the email):\n- The demo was held on Monday\n- The client asked for pricing details\n- The proposal should be shared by Friday\n- The client is interested in the automation dashboard\n\nTone: Formal\n\n## Output Requirements\nReturn the email with exactly these sections:\n1. Subject: (one clear subject line)\n2. Greeting: (e.g., Hi [Recipient Name],)\n3. Body: (clear paragraphs covering the intent and all key facts)\n4. Closing: (professional sign-off with [Sender Name])\n\n## Rules\n- Use ONLY information from the Key Facts. Do not invent names, prices, dates, attachments, or commitments not provided.\n- Match the requested tone throughout.\n- Keep the email professional and concise.\n- Use placeholders [Recipient Name] and [Sender Name] instead of inventing names.\n\n## Output Format\nSubject: <subject line>\n\n<greeting>\n\n<body paragraphs>\n\n<closing>",
+  "email": "Subject: Follow-up on Monday's Product Demo\n\nDear [Recipient Name],\n\nI am writing to follow up on the product demo that we held on Monday. We appreciated the opportunity to showcase our product's features and capabilities, and we were pleased to learn about your interest in the automation dashboard. During the demo, you requested pricing details, which we are currently compiling.\n\nWe understand that having this information is crucial for your decision-making process. As discussed, we will share a proposal with you by Friday, which will include the pricing details you requested. This document will provide a comprehensive overview of how our product can meet your needs, particularly in relation to the automation dashboard that caught your attention.\n\nIf you have any further questions or need any additional information before receiving the proposal, please do not hesitate to contact us. We look forward to the possibility of working with you and exploring how our product can support your goals.\n\nBest regards,\n[Sender Name]"
+}

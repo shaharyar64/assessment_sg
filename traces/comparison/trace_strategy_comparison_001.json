@@ -1,0 +1,54 @@
+{
+  "trace_id": "trace_strategy_comparison_001",
+  "trace_name": "TRACE 12 — Strategy Comparison and Recommendation",
+  "category": "comparison",
+  "timestamp": "2026-06-17T12:55:42.410781+00:00",
+  "input": {
+    "basic": {
+      "metric_averages": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 0.9787,
+        "conciseness_and_fluency": 0.965
+      },
+      "overall_average": 0.9812,
+      "scenario_count": 10
+    },
+    "structured": {
+      "metric_averages": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 0.9236,
+        "conciseness_and_fluency": 0.955
+      },
+      "overall_average": 0.9595,
+      "scenario_count": 10
+    }
+  },
+  "output": {
+    "recommended_strategy": "basic",
+    "reason": "Highest overall average (0.98 vs 0.96) and better scores across the three custom metrics.",
+    "biggest_failure_mode": "Lowest average on Tone and Format Accuracy (0.92): inconsistent formatting and tone misalignment.",
+    "production_recommendation": "Use basic — more complete, tone-accurate, and polished emails across the same 10 scenarios.",
+    "overall_averages": {
+      "basic": 0.9812,
+      "structured": 0.9595
+    },
+    "metric_comparison": {
+      "Fact Recall": {
+        "basic": 1.0,
+        "structured": 1.0
+      },
+      "Tone and Format Accuracy": {
+        "basic": 0.9787,
+        "structured": 0.9236
+      },
+      "Conciseness and Fluency": {
+        "basic": 0.965,
+        "structured": 0.955
+      }
+    },
+    "winner": "basic",
+    "loser": "structured"
+  },
+  "passed": true,
+  "notes": ""
+}

@@ -1,0 +1,266 @@
+{
+  "generated_emails": [
+    {
+      "scenario_id": "SCN-001",
+      "strategy": "basic",
+      "intent": "Follow up after a product demo",
+      "tone": "Formal",
+      "key_facts": [
+        "The demo was held on Monday",
+        "The client asked for pricing details",
+        "The proposal should be shared by Friday",
+        "The client is interested in the automation dashboard"
+      ],
+      "prompt": "[SYSTEM]\nYou write professional business emails.\n\n[HUMAN]\nWrite a professional email.\n\nIntent: Follow up after a product demo\nKey Facts:\n- The demo was held on Monday\n- The client asked for pricing details\n- The proposal should be shared by Friday\n- The client is interested in the automation dashboard\nTone: Formal\n\nInclude a subject line, greeting, body, and closing.",
+      "email": "Subject: Follow-up on Product Demo and Pricing Details\n\nDear [Client's Name],\n\nI hope this email finds you well. I wanted to follow up on the product demo we held on Monday, where we had the opportunity to showcase our solution's capabilities and features. As discussed during the demo, you expressed interest in our automation dashboard and requested pricing details to further evaluate our product.\n\nI am pleased to inform you that we are currently preparing a comprehensive proposal that outlines the pricing structure and implementation plan tailored to your organization's needs. We anticipate sharing the proposal with you by this Friday, and it will include all the necessary information to help you make an informed decision.\n\nIn the meantime, if you have any additional questions or concerns regarding our product or the demo, please do not hesitate to reach out to me directly. I am more than happy to address any queries you may have and provide further clarification on our automation dashboard and its benefits.\n\nThank you for considering our solution, and I look forward to sharing the proposal with you soon. If there's anything else I can provide to support your evaluation process, please let me know.\n\nBest regards,\n\n[Your Name]"
+    },
+    {
+      "scenario_id": "SCN-001",
+      "strategy": "structured",
+      "intent": "Follow up after a product demo",
+      "tone": "Formal",
+      "key_facts": [
+        "The demo was held on Monday",
+        "The client asked for pricing details",
+        "The proposal should be shared by Friday",
+        "The client is interested in the automation dashboard"
+      ],
+      "prompt": "[SYSTEM]\nYou are a professional business email writer. Follow instructions exactly and use only provided information.\n\n[HUMAN]\n## Task\nGenerate one complete email based on the structured input below.\n\n## Input\nIntent: Follow up after a product demo\n\nKey Facts (every fact must appear naturally in the email):\n- The demo was held on Monday\n- The client asked for pricing details\n- The proposal should be shared by Friday\n- The client is interested in the automation dashboard\n\nTone: Formal\n\n## Output Requirements\nReturn the email with exactly these sections:\n1. Subject: (one clear subject line)\n2. Greeting: (e.g., Hi [Recipient Name],)\n3. Body: (clear paragraphs covering the intent and all key facts)\n4. Closing: (professional sign-off with [Sender Name])\n\n## Rules\n- Use ONLY information from the Key Facts. Do not invent names, prices, dates, attachments, or commitments not provided.\n- Match the requested tone throughout.\n- Keep the email professional and concise.\n- Use placeholders [Recipient Name] and [Sender Name] instead of inventing names.\n\n## Output Format\nSubject: <subject line>\n\n<greeting>\n\n<body paragraphs>\n\n<closing>",
+      "email": "Subject: Follow-up on Monday's Product Demo\n\nDear [Recipient Name],\n\nI hope this email finds you well. I am writing to follow up on the product demo we held on Monday. We appreciated the opportunity to showcase our product's capabilities and were pleased to learn about your interest in the automation dashboard.\n\nAs discussed during the demo, you had requested pricing details for our product. We are currently preparing a comprehensive proposal that will include all the necessary information. We anticipate sharing the proposal with you by Friday, and we believe it will address all your questions and concerns regarding the pricing.\n\nIf you have any further questions or need any additional information before receiving the proposal, please do not hesitate to reach out. We are looking forward to the possibility of working with you and exploring how our product can meet your needs, particularly with regards to the automation dashboard.\n\nBest regards,\n[Sender Name]"
+    },
+    {
+      "scenario_id": "SCN-002",
+      "strategy": "basic",
+      "intent": "Apologize for a delayed response",
+      "tone": "Empathetic",
+      "key_facts": [
+        "The response was delayed due to internal review",
+        "The requested document is now ready",
+        "The team appreciates the client's patience"
+      ],
+      "prompt": "[SYSTEM]\nYou write professional business emails.\n\n[HUMAN]\nWrite a professional email.\n\nIntent: Apologize for a delayed response\nKey Facts:\n- The response was delayed due to internal review\n- The requested document is now ready\n- The team appreciates the client's patience\nTone: Empathetic\n\nInclude a subject line, greeting, body, and closing.",
+      "email": "Subject: Apology for Delayed Response and Update on Requested Document\n\nDear [Client's Name],\n\nI am writing to express my sincerest apologies for the delayed response to your request. We understand the importance of timely communication, and I regret that our internal review process took longer than anticipated. Please know that we appreciate your patience and understanding in this matter.\n\nI am pleased to inform you that the requested document is now ready and available for your review. Our team has worked diligently to ensure that it meets your requirements, and we are confident that it will be of value to you.\n\nOnce again, I would like to thank you for your patience and understanding. We value our relationship with you and appreciate the opportunity to work together. If you have any questions or concerns, please do not hesitate to reach out to us.\n\nThank you for your continued trust in our team.\n\nBest regards,\n[Your Name]"
+    },
+    {
+      "scenario_id": "SCN-002",
+      "strategy": "structured",
+      "intent": "Apologize for a delayed response",
+      "tone": "Empathetic",
+      "key_facts": [
+        "The response was delayed due to internal review",
+        "The requested document is now ready",
+        "The team appreciates the client's patience"
+      ],
+      "prompt": "[SYSTEM]\nYou are a professional business email writer. Follow instructions exactly and use only provided information.\n\n[HUMAN]\n## Task\nGenerate one complete email based on the structured input below.\n\n## Input\nIntent: Apologize for a delayed response\n\nKey Facts (every fact must appear naturally in the email):\n- The response was delayed due to internal review\n- The requested document is now ready\n- The team appreciates the client's patience\n\nTone: Empathetic\n\n## Output Requirements\nReturn the email with exactly these sections:\n1. Subject: (one clear subject line)\n2. Greeting: (e.g., Hi [Recipient Name],)\n3. Body: (clear paragraphs covering the intent and all key facts)\n4. Closing: (professional sign-off with [Sender Name])\n\n## Rules\n- Use ONLY information from the Key Facts. Do not invent names, prices, dates, attachments, or commitments not provided.\n- Match the requested tone throughout.\n- Keep the email professional and concise.\n- Use placeholders [Recipient Name] and [Sender Name] instead of inventing names.\n\n## Output Format\nSubject: <subject line>\n\n<greeting>\n\n<body paragraphs>\n\n<closing>",
+      "email": "Subject: Apology for Delayed Response and Document Update\n\nDear [Recipient Name],\n\nI am writing to apologize for the delay in our response to your request. We understand that timely communication is crucial, and we regret any inconvenience this may have caused. The delay was due to an internal review process that took longer than anticipated, but I am pleased to inform you that this process is now complete.\n\nI am happy to let you know that the requested document is now ready. Our team has worked diligently to ensure its preparation, and we appreciate the patience you have shown during this time. Your understanding is valued, and we acknowledge that it is because of clients like you that we strive to improve our processes and services.\n\nOnce again, we appreciate your patience and look forward to moving forward. If you have any further questions or need any additional assistance, please do not hesitate to reach out.\n\nBest regards,\n[Sender Name]"
+    },
+    {
+      "scenario_id": "SCN-003",
+      "strategy": "basic",
+      "intent": "Request proposal details",
+      "tone": "Professional",
+      "key_facts": [
+        "The client requested more detail about implementation timeline",
+        "The client wants a breakdown of support options",
+        "The response should ask for availability for a follow-up call"
+      ],
+      "prompt": "[SYSTEM]\nYou write professional business emails.\n\n[HUMAN]\nWrite a professional email.\n\nIntent: Request proposal details\nKey Facts:\n- The client requested more detail about implementation timeline\n- The client wants a breakdown of support options\n- The response should ask for availability for a follow-up call\nTone: Professional\n\nInclude a subject line, greeting, body, and closing.",
+      "email": "Subject: Request for Proposal Details and Follow-up Discussion\n\nDear [Client's Name],\n\nI hope this email finds you well. I am writing to follow up on our previous discussion regarding the proposal we submitted for your review. As per your request, I would like to provide more detailed information about the implementation timeline for the project. Our team has outlined a comprehensive plan that includes key milestones and deadlines, which we believe will ensure a smooth and efficient execution of the project.\n\nIn addition to the implementation timeline, you also requested a breakdown of the support options available to you. We offer a range of support packages, including standard, premium, and customized options, each designed to meet the unique needs of your organization. I would be happy to provide a detailed overview of each package, including the services and benefits included, as well as the associated costs.\n\nTo discuss these details further and answer any questions you may have, I would like to schedule a follow-up call with you. Would you be available for a call at your convenience? Please let me know a few dates and times that work for you, and I will make sure to schedule it accordingly.\n\nThank you for considering our proposal, and I look forward to the opportunity to discuss the details with you in more depth.\n\nBest regards,\n\n[Your Name]"
+    },
+    {
+      "scenario_id": "SCN-003",
+      "strategy": "structured",
+      "intent": "Request proposal details",
+      "tone": "Professional",
+      "key_facts": [
+        "The client requested more detail about implementation timeline",
+        "The client wants a breakdown of support options",
+        "The response should ask for availability for a follow-up call"
+      ],
+      "prompt": "[SYSTEM]\nYou are a professional business email writer. Follow instructions exactly and use only provided information.\n\n[HUMAN]\n## Task\nGenerate one complete email based on the structured input below.\n\n## Input\nIntent: Request proposal details\n\nKey Facts (every fact must appear naturally in the email):\n- The client requested more detail about implementation timeline\n- The client wants a breakdown of support options\n- The response should ask for availability for a follow-up call\n\nTone: Professional\n\n## Output Requirements\nReturn the email with exactly these sections:\n1. Subject: (one clear subject line)\n2. Greeting: (e.g., Hi [Recipient Name],)\n3. Body: (clear paragraphs covering the intent and all key facts)\n4. Closing: (professional sign-off with [Sender Name])\n\n## Rules\n- Use ONLY information from the Key Facts. Do not invent names, prices, dates, attachments, or commitments not provided.\n- Match the requested tone throughout.\n- Keep the email professional and concise.\n- Use placeholders [Recipient Name] and [Sender Name] instead of inventing names.\n\n## Output Format\nSubject: <subject line>\n\n<greeting>\n\n<body paragraphs>\n\n<closing>",
+      "email": "Subject: Request for Proposal Details\n\nDear [Recipient Name],\n\nI am writing to follow up on our previous discussion regarding the proposal. You had requested more detail about the implementation timeline, and I would like to provide a more comprehensive outline of the key milestones and deadlines. This will give you a clearer understanding of how the project will unfold and what you can expect at each stage.\n\nIn addition to the implementation timeline, you also expressed interest in learning more about the support options available. I can provide a breakdown of the different support options, including the various levels of service and the corresponding benefits. This will enable you to make an informed decision about which support option best suits your needs.\n\nI would appreciate the opportunity to discuss these details further with you and answer any questions you may have. Would you be available for a follow-up call to review the proposal details and address any concerns you may have?\n\nBest regards,\n[Sender Name]"
+    },
+    {
+      "scenario_id": "SCN-004",
+      "strategy": "basic",
+      "intent": "Confirm next steps after a call",
+      "tone": "Professional",
+      "key_facts": [
+        "The call took place on Tuesday",
+        "The updated timeline will be sent by Wednesday",
+        "The implementation owner will be confirmed after internal review"
+      ],
+      "prompt": "[SYSTEM]\nYou write professional business emails.\n\n[HUMAN]\nWrite a professional email.\n\nIntent: Confirm next steps after a call\nKey Facts:\n- The call took place on Tuesday\n- The updated timeline will be sent by Wednesday\n- The implementation owner will be confirmed after internal review\nTone: Professional\n\nInclude a subject line, greeting, body, and closing.",
+      "email": "Subject: Next Steps Following Our Call on Tuesday\n\nDear [Recipient's Name],\n\nI hope this email finds you well. I wanted to follow up on our call that took place on Tuesday and confirm the next steps as discussed. As we outlined during the call, our team will be sending over an updated timeline by Wednesday, which will provide a detailed outline of the project's progression.\n\nRegarding the implementation owner, we will be conducting an internal review to determine the best fit for the role. Once this review is complete, we will confirm the implementation owner and ensure a seamless transition.\n\nIf you have any questions or concerns in the meantime, please do not hesitate to reach out. We appreciate your continued collaboration and look forward to moving forward with the project.\n\nBest regards,\n[Your Name]"
+    },
+    {
+      "scenario_id": "SCN-004",
+      "strategy": "structured",
+      "intent": "Confirm next steps after a call",
+      "tone": "Professional",
+      "key_facts": [
+        "The call took place on Tuesday",
+        "The updated timeline will be sent by Wednesday",
+        "The implementation owner will be confirmed after internal review"
+      ],
+      "prompt": "[SYSTEM]\nYou are a professional business email writer. Follow instructions exactly and use only provided information.\n\n[HUMAN]\n## Task\nGenerate one complete email based on the structured input below.\n\n## Input\nIntent: Confirm next steps after a call\n\nKey Facts (every fact must appear naturally in the email):\n- The call took place on Tuesday\n- The updated timeline will be sent by Wednesday\n- The implementation owner will be confirmed after internal review\n\nTone: Professional\n\n## Output Requirements\nReturn the email with exactly these sections:\n1. Subject: (one clear subject line)\n2. Greeting: (e.g., Hi [Recipient Name],)\n3. Body: (clear paragraphs covering the intent and all key facts)\n4. Closing: (professional sign-off with [Sender Name])\n\n## Rules\n- Use ONLY information from the Key Facts. Do not invent names, prices, dates, attachments, or commitments not provided.\n- Match the requested tone throughout.\n- Keep the email professional and concise.\n- Use placeholders [Recipient Name] and [Sender Name] instead of inventing names.\n\n## Output Format\nSubject: <subject line>\n\n<greeting>\n\n<body paragraphs>\n\n<closing>",
+      "email": "Subject: Next Steps Following Our Call on Tuesday\n\nHi [Recipient Name],\n\nI wanted to follow up on our call that took place on Tuesday and confirm the next steps. As discussed, we will be sending over an updated timeline by Wednesday, which will outline the key milestones and deadlines for the project.\n\nRegarding the implementation, we are currently conducting an internal review to determine the implementation owner. Once this review is complete, we will confirm the owner and ensure a smooth transition. In the meantime, please let us know if you have any questions or concerns.\n\nWe appreciate your patience and look forward to moving forward with the project. If you have any immediate questions, please do not hesitate to reach out.\n\nBest regards,\n[Sender Name]"
+    },
+    {
+      "scenario_id": "SCN-005",
+      "strategy": "basic",
+      "intent": "Send an urgent reminder about a deadline",
+      "tone": "Urgent",
+      "key_facts": [
+        "The contract review deadline is tomorrow",
+        "The legal team needs the signed copy by end of day",
+        "The sender is available for a quick call if questions arise"
+      ],
+      "prompt": "[SYSTEM]\nYou write professional business emails.\n\n[HUMAN]\nWrite a professional email.\n\nIntent: Send an urgent reminder about a deadline\nKey Facts:\n- The contract review deadline is tomorrow\n- The legal team needs the signed copy by end of day\n- The sender is available for a quick call if questions arise\nTone: Urgent\n\nInclude a subject line, greeting, body, and closing.",
+      "email": "Subject: Urgent: Contract Review Deadline Tomorrow\n\nDear Team,\n\nI am writing to remind you that the contract review deadline is tomorrow, and it is essential that we meet this timeline. The legal team requires a signed copy of the contract by the end of day tomorrow, and any delays may impact our project schedule.\n\nI strongly encourage you to review the contract documents as soon as possible and return the signed copy to me by the deadline. If you have any questions or concerns, please do not hesitate to reach out to me. I am available for a quick call to address any issues that may arise.\n\nTime is of the essence, and I appreciate your prompt attention to this matter. Please let me know if you have any questions or concerns.\n\nBest regards,\n[Your Name]"
+    },
+    {
+      "scenario_id": "SCN-005",
+      "strategy": "structured",
+      "intent": "Send an urgent reminder about a deadline",
+      "tone": "Urgent",
+      "key_facts": [
+        "The contract review deadline is tomorrow",
+        "The legal team needs the signed copy by end of day",
+        "The sender is available for a quick call if questions arise"
+      ],
+      "prompt": "[SYSTEM]\nYou are a professional business email writer. Follow instructions exactly and use only provided information.\n\n[HUMAN]\n## Task\nGenerate one complete email based on the structured input below.\n\n## Input\nIntent: Send an urgent reminder about a deadline\n\nKey Facts (every fact must appear naturally in the email):\n- The contract review deadline is tomorrow\n- The legal team needs the signed copy by end of day\n- The sender is available for a quick call if questions arise\n\nTone: Urgent\n\n## Output Requirements\nReturn the email with exactly these sections:\n1. Subject: (one clear subject line)\n2. Greeting: (e.g., Hi [Recipient Name],)\n3. Body: (clear paragraphs covering the intent and all key facts)\n4. Closing: (professional sign-off with [Sender Name])\n\n## Rules\n- Use ONLY information from the Key Facts. Do not invent names, prices, dates, attachments, or commitments not provided.\n- Match the requested tone throughout.\n- Keep the email professional and concise.\n- Use placeholders [Recipient Name] and [Sender Name] instead of inventing names.\n\n## Output Format\nSubject: <subject line>\n\n<greeting>\n\n<body paragraphs>\n\n<closing>",
+      "email": "Subject: Urgent: Contract Review Deadline Tomorrow\n\nDear [Recipient Name],\n\nI am writing to remind you that the contract review deadline is tomorrow. It is crucial that we meet this deadline, and I want to ensure that everything is in place for a timely completion. The legal team is waiting for the signed copy, and it is essential that we receive it by the end of day tomorrow.\n\nIf you have any questions or concerns regarding the contract, please do not hesitate to reach out to me. I am available for a quick call to address any issues that may arise, and I am committed to supporting you through this process. Please let me know if there is anything I can do to facilitate the signing and return of the contract.\n\nSincerely,\n[Sender Name]"
+    },
+    {
+      "scenario_id": "SCN-006",
+      "strategy": "basic",
+      "intent": "Thank a colleague for project support",
+      "tone": "Casual",
+      "key_facts": [
+        "The colleague helped resolve a blocking issue last week",
+        "The project is back on schedule",
+        "The sender wants to acknowledge the extra effort"
+      ],
+      "prompt": "[SYSTEM]\nYou write professional business emails.\n\n[HUMAN]\nWrite a professional email.\n\nIntent: Thank a colleague for project support\nKey Facts:\n- The colleague helped resolve a blocking issue last week\n- The project is back on schedule\n- The sender wants to acknowledge the extra effort\nTone: Casual\n\nInclude a subject line, greeting, body, and closing.",
+      "email": "Subject: Thanks for Your Help on the Project\n\nHi Alex,\n\nI just wanted to take a moment to express my gratitude for your help on our current project. Your assistance last week in resolving the blocking issue was instrumental in getting us back on track. Thanks to your extra effort, we're now back on schedule and making great progress.\n\nI really appreciate the time and energy you dedicated to helping us overcome this hurdle. Your support and expertise were invaluable, and I'm grateful to have you as a part of our team.\n\nThanks again for your help, and I look forward to seeing the project through to its successful completion.\n\nBest regards,\n[Your Name]"
+    },
+    {
+      "scenario_id": "SCN-006",
+      "strategy": "structured",
+      "intent": "Thank a colleague for project support",
+      "tone": "Casual",
+      "key_facts": [
+        "The colleague helped resolve a blocking issue last week",
+        "The project is back on schedule",
+        "The sender wants to acknowledge the extra effort"
+      ],
+      "prompt": "[SYSTEM]\nYou are a professional business email writer. Follow instructions exactly and use only provided information.\n\n[HUMAN]\n## Task\nGenerate one complete email based on the structured input below.\n\n## Input\nIntent: Thank a colleague for project support\n\nKey Facts (every fact must appear naturally in the email):\n- The colleague helped resolve a blocking issue last week\n- The project is back on schedule\n- The sender wants to acknowledge the extra effort\n\nTone: Casual\n\n## Output Requirements\nReturn the email with exactly these sections:\n1. Subject: (one clear subject line)\n2. Greeting: (e.g., Hi [Recipient Name],)\n3. Body: (clear paragraphs covering the intent and all key facts)\n4. Closing: (professional sign-off with [Sender Name])\n\n## Rules\n- Use ONLY information from the Key Facts. Do not invent names, prices, dates, attachments, or commitments not provided.\n- Match the requested tone throughout.\n- Keep the email professional and concise.\n- Use placeholders [Recipient Name] and [Sender Name] instead of inventing names.\n\n## Output Format\nSubject: <subject line>\n\n<greeting>\n\n<body paragraphs>\n\n<closing>",
+      "email": "Subject: Thanks for Your Help on the Project\n\nHi [Recipient Name],\n\nI just wanted to take a moment to thank you for your help on our project last week. Your assistance in resolving that blocking issue was a huge relief and really got us back on track. Because of your extra effort, we're now back on schedule, which is a big deal for us.\n\nI appreciate the time you took to help resolve the issue. It wasn't an easy one, but your input and expertise made all the difference. I'm grateful for your willingness to go the extra mile to ensure the project's success.\n\nThanks again for your support. I'm looking forward to seeing the project through to its completion.\n\nBest,\n[Sender Name]"
+    },
+    {
+      "scenario_id": "SCN-007",
+      "strategy": "basic",
+      "intent": "Schedule a quarterly business review",
+      "tone": "Formal",
+      "key_facts": [
+        "The review should cover Q2 performance metrics",
+        "The client prefers a 45-minute session",
+        "Two time slots are proposed for next week"
+      ],
+      "prompt": "[SYSTEM]\nYou write professional business emails.\n\n[HUMAN]\nWrite a professional email.\n\nIntent: Schedule a quarterly business review\nKey Facts:\n- The review should cover Q2 performance metrics\n- The client prefers a 45-minute session\n- Two time slots are proposed for next week\nTone: Formal\n\nInclude a subject line, greeting, body, and closing.",
+      "email": "Subject: Scheduling of Quarterly Business Review for Q2 Performance\n\nDear [Client's Name],\n\nI hope this email finds you well. As we approach the end of the second quarter, I would like to schedule our quarterly business review to discuss the performance metrics for Q2. This review will provide us with an opportunity to assess our progress, address any challenges, and align our strategies for the remainder of the year.\n\nIn accordance with your preference, I have allocated a 45-minute session for this review. I propose two time slots for next week: \n\n- Monday at 2:00 PM\n- Thursday at 10:00 AM\n\nPlease let me know which of these time slots suits you best, or if you would like me to suggest alternative times. I am committed to ensuring that this review is convenient and productive for you.\n\nIf you have any specific topics or areas of focus you would like to discuss during the review, please do not hesitate to inform me in advance. I am looking forward to hearing back from you and finalizing the arrangements.\n\nBest regards,\n\n[Your Name]"
+    },
+    {
+      "scenario_id": "SCN-007",
+      "strategy": "structured",
+      "intent": "Schedule a quarterly business review",
+      "tone": "Formal",
+      "key_facts": [
+        "The review should cover Q2 performance metrics",
+        "The client prefers a 45-minute session",
+        "Two time slots are proposed for next week"
+      ],
+      "prompt": "[SYSTEM]\nYou are a professional business email writer. Follow instructions exactly and use only provided information.\n\n[HUMAN]\n## Task\nGenerate one complete email based on the structured input below.\n\n## Input\nIntent: Schedule a quarterly business review\n\nKey Facts (every fact must appear naturally in the email):\n- The review should cover Q2 performance metrics\n- The client prefers a 45-minute session\n- Two time slots are proposed for next week\n\nTone: Formal\n\n## Output Requirements\nReturn the email with exactly these sections:\n1. Subject: (one clear subject line)\n2. Greeting: (e.g., Hi [Recipient Name],)\n3. Body: (clear paragraphs covering the intent and all key facts)\n4. Closing: (professional sign-off with [Sender Name])\n\n## Rules\n- Use ONLY information from the Key Facts. Do not invent names, prices, dates, attachments, or commitments not provided.\n- Match the requested tone throughout.\n- Keep the email professional and concise.\n- Use placeholders [Recipient Name] and [Sender Name] instead of inventing names.\n\n## Output Format\nSubject: <subject line>\n\n<greeting>\n\n<body paragraphs>\n\n<closing>",
+      "email": "Subject: Invitation to Quarterly Business Review\n\nDear [Recipient Name],\n\nI am writing to invite you to our quarterly business review, which will focus on discussing the Q2 performance metrics. This review will provide an opportunity to assess our progress and align our strategies for the upcoming quarter.\n\nThe review is expected to last approximately 45 minutes, as per your preference. We have identified two potential time slots for the session to take place next week and would like to offer you the choice between these options. We believe that this review will be beneficial in evaluating our current standing and planning for future growth.\n\nPlease let us know which of the proposed time slots suits you best, and we will ensure that the necessary arrangements are made. We look forward to discussing the Q2 performance metrics with you and exploring ways to drive continued success.\n\nBest regards,\n[Sender Name]"
+    },
+    {
+      "scenario_id": "SCN-008",
+      "strategy": "basic",
+      "intent": "Notify about a planned maintenance window",
+      "tone": "Professional",
+      "key_facts": [
+        "Maintenance is scheduled for Saturday from 2 AM to 6 AM",
+        "The platform may be unavailable during this window",
+        "Support will monitor the rollout and share an update afterward"
+      ],
+      "prompt": "[SYSTEM]\nYou write professional business emails.\n\n[HUMAN]\nWrite a professional email.\n\nIntent: Notify about a planned maintenance window\nKey Facts:\n- Maintenance is scheduled for Saturday from 2 AM to 6 AM\n- The platform may be unavailable during this window\n- Support will monitor the rollout and share an update afterward\nTone: Professional\n\nInclude a subject line, greeting, body, and closing.",
+      "email": "Subject: Planned Maintenance Window - Saturday, 2 AM - 6 AM\n\nDear Valued Customers,\n\nWe are writing to inform you that our platform will be undergoing a scheduled maintenance window this Saturday from 2:00 AM to 6:00 AM. During this time, you may experience intermittent unavailability of our services as our technical team performs necessary updates and improvements.\n\nPlease be assured that our support team will be closely monitoring the rollout and will share an update with you once the maintenance is complete. We apologize for any inconvenience this may cause and appreciate your understanding as we work to ensure the continued stability and performance of our platform.\n\nIf you have any questions or concerns, please do not hesitate to reach out to us. We are committed to providing you with the best possible experience and appreciate your patience and cooperation during this maintenance window.\n\nThank you for your understanding and we look forward to continuing to serve you.\n\nBest regards,\n[Your Name]"
+    },
+    {
+      "scenario_id": "SCN-008",
+      "strategy": "structured",
+      "intent": "Notify about a planned maintenance window",
+      "tone": "Professional",
+      "key_facts": [
+        "Maintenance is scheduled for Saturday from 2 AM to 6 AM",
+        "The platform may be unavailable during this window",
+        "Support will monitor the rollout and share an update afterward"
+      ],
+      "prompt": "[SYSTEM]\nYou are a professional business email writer. Follow instructions exactly and use only provided information.\n\n[HUMAN]\n## Task\nGenerate one complete email based on the structured input below.\n\n## Input\nIntent: Notify about a planned maintenance window\n\nKey Facts (every fact must appear naturally in the email):\n- Maintenance is scheduled for Saturday from 2 AM to 6 AM\n- The platform may be unavailable during this window\n- Support will monitor the rollout and share an update afterward\n\nTone: Professional\n\n## Output Requirements\nReturn the email with exactly these sections:\n1. Subject: (one clear subject line)\n2. Greeting: (e.g., Hi [Recipient Name],)\n3. Body: (clear paragraphs covering the intent and all key facts)\n4. Closing: (professional sign-off with [Sender Name])\n\n## Rules\n- Use ONLY information from the Key Facts. Do not invent names, prices, dates, attachments, or commitments not provided.\n- Match the requested tone throughout.\n- Keep the email professional and concise.\n- Use placeholders [Recipient Name] and [Sender Name] instead of inventing names.\n\n## Output Format\nSubject: <subject line>\n\n<greeting>\n\n<body paragraphs>\n\n<closing>",
+      "email": "Subject: Planned Maintenance Window Notification\n\nDear [Recipient Name],\n\nWe are writing to inform you that a planned maintenance window is scheduled for this Saturday from 2 AM to 6 AM. During this time, the platform may be unavailable due to the maintenance activities being performed.\n\nOur support team will be closely monitoring the rollout and will share an update after the maintenance window has concluded. This will ensure that any necessary actions are taken promptly to minimize any potential impact on your activities.\n\nIf you have any questions or concerns, please do not hesitate to reach out to us. We appreciate your understanding and cooperation as we work to maintain and improve our services.\n\nBest regards,\n[Sender Name]"
+    },
+    {
+      "scenario_id": "SCN-009",
+      "strategy": "basic",
+      "intent": "Follow up on an unanswered RFP question",
+      "tone": "Formal",
+      "key_facts": [
+        "Question 7 about data retention was submitted on April 10",
+        "The compliance team is preparing the official answer",
+        "The full RFP response will be sent by April 20"
+      ],
+      "prompt": "[SYSTEM]\nYou write professional business emails.\n\n[HUMAN]\nWrite a professional email.\n\nIntent: Follow up on an unanswered RFP question\nKey Facts:\n- Question 7 about data retention was submitted on April 10\n- The compliance team is preparing the official answer\n- The full RFP response will be sent by April 20\nTone: Formal\n\nInclude a subject line, greeting, body, and closing.",
+      "email": "Subject: Follow-up on RFP Question 7 - Data Retention\n\nDear [Recipient's Name],\n\nI am writing to follow up on a question we submitted on April 10, 2023, regarding data retention, which was listed as Question 7 in our Request for Proposal (RFP) inquiry. Our compliance team is currently preparing an official response to this inquiry, and I wanted to assure you that we are working diligently to provide a comprehensive answer.\n\nPlease be advised that we will include the response to Question 7, along with our complete RFP submission, which will be sent to you by April 20, 2023, as previously stated. If you have any further questions or concerns in the meantime, please do not hesitate to reach out to me directly.\n\nThank you for your understanding, and I look forward to submitting our full RFP response soon.\n\nBest regards,\n[Your Name]"
+    },
+    {
+      "scenario_id": "SCN-009",
+      "strategy": "structured",
+      "intent": "Follow up on an unanswered RFP question",
+      "tone": "Formal",
+      "key_facts": [
+        "Question 7 about data retention was submitted on April 10",
+        "The compliance team is preparing the official answer",
+        "The full RFP response will be sent by April 20"
+      ],
+      "prompt": "[SYSTEM]\nYou are a professional business email writer. Follow instructions exactly and use only provided information.\n\n[HUMAN]\n## Task\nGenerate one complete email based on the structured input below.\n\n## Input\nIntent: Follow up on an unanswered RFP question\n\nKey Facts (every fact must appear naturally in the email):\n- Question 7 about data retention was submitted on April 10\n- The compliance team is preparing the official answer\n- The full RFP response will be sent by April 20\n\nTone: Formal\n\n## Output Requirements\nReturn the email with exactly these sections:\n1. Subject: (one clear subject line)\n2. Greeting: (e.g., Hi [Recipient Name],)\n3. Body: (clear paragraphs covering the intent and all key facts)\n4. Closing: (professional sign-off with [Sender Name])\n\n## Rules\n- Use ONLY information from the Key Facts. Do not invent names, prices, dates, attachments, or commitments not provided.\n- Match the requested tone throughout.\n- Keep the email professional and concise.\n- Use placeholders [Recipient Name] and [Sender Name] instead of inventing names.\n\n## Output Format\nSubject: <subject line>\n\n<greeting>\n\n<body paragraphs>\n\n<closing>",
+      "email": "Subject: Follow-up on RFP Question 7\n\nDear [Recipient Name],\n\nI am writing to follow up on a question we submitted regarding your RFP on April 10. Specifically, we are awaiting a response to Question 7, which pertains to data retention. Our compliance team is currently preparing the official answer to this inquiry, which will be included in our full RFP response.\n\nAs previously stated, we anticipate submitting our complete RFP response by April 20. This response will encompass all required information, including the answer to Question 7, which our compliance team is diligently working on. We appreciate your patience and look forward to the opportunity to provide our comprehensive response soon.\n\nBest regards,\n[Sender Name]"
+    },
+    {
+      "scenario_id": "SCN-010",
+      "strategy": "basic",
+      "intent": "Invite a client to a product roadmap session",
+      "tone": "Professional",
+      "key_facts": [
+        "The session will preview features planned for the next release",
+        "The client feedback will help prioritize the backlog",
+        "The session is planned for the last week of the month"
+      ],
+      "prompt": "[SYSTEM]\nYou write professional business emails.\n\n[HUMAN]\nWrite a professional email.\n\nIntent: Invite a client to a product roadmap session\nKey Facts:\n- The session will preview features planned for the next release\n- The client feedback will help prioritize the backlog\n- The session is planned for the last week of the month\nTone: Professional\n\nInclude a subject line, greeting, body, and closing.",
+      "email": "Subject: Invitation to Product Roadmap Session\n\nDear [Client Name],\n\nI am writing to invite you to an exclusive product roadmap session, where we will be sharing our plans for the upcoming release. This session will provide a unique opportunity for you to preview the features we have in store and offer your valuable feedback. Your input will play a crucial role in helping us prioritize our product backlog, ensuring that we are delivering the most impactful features to meet your needs.\n\nThe session is scheduled to take place during the last week of this month. We believe that your participation will not only enhance our understanding of your requirements but also enable us to tailor our product to better serve your business objectives.\n\nWe are excited about the prospect of collaborating with you and exploring ways to drive mutual success. If you are available and interested in attending, please let us know by responding to this email. We will provide you with a detailed agenda and logistics once we confirm your attendance.\n\nThank you for considering our invitation, and we look forward to hearing back from you soon.\n\nBest regards,\n[Your Name]"
+    },
+    {
+      "scenario_id": "SCN-010",
+      "strategy": "structured",
+      "intent": "Invite a client to a product roadmap session",
+      "tone": "Professional",
+      "key_facts": [
+        "The session will preview features planned for the next release",
+        "The client feedback will help prioritize the backlog",
+        "The session is planned for the last week of the month"
+      ],
+      "prompt": "[SYSTEM]\nYou are a professional business email writer. Follow instructions exactly and use only provided information.\n\n[HUMAN]\n## Task\nGenerate one complete email based on the structured input below.\n\n## Input\nIntent: Invite a client to a product roadmap session\n\nKey Facts (every fact must appear naturally in the email):\n- The session will preview features planned for the next release\n- The client feedback will help prioritize the backlog\n- The session is planned for the last week of the month\n\nTone: Professional\n\n## Output Requirements\nReturn the email with exactly these sections:\n1. Subject: (one clear subject line)\n2. Greeting: (e.g., Hi [Recipient Name],)\n3. Body: (clear paragraphs covering the intent and all key facts)\n4. Closing: (professional sign-off with [Sender Name])\n\n## Rules\n- Use ONLY information from the Key Facts. Do not invent names, prices, dates, attachments, or commitments not provided.\n- Match the requested tone throughout.\n- Keep the email professional and concise.\n- Use placeholders [Recipient Name] and [Sender Name] instead of inventing names.\n\n## Output Format\nSubject: <subject line>\n\n<greeting>\n\n<body paragraphs>\n\n<closing>",
+      "email": "Subject: Invitation to Product Roadmap Session\n\nDear [Recipient Name],\n\nWe are excited to invite you to a product roadmap session, where we will be previewing features planned for the next release. This session is a valuable opportunity for us to share our upcoming developments and gather your feedback.\n\nYour input is crucial in helping us prioritize the backlog, ensuring that our product continues to meet your needs and expectations. By attending this session, you will have the chance to influence the direction of our product and provide us with valuable insights.\n\nThe session is planned for the last week of the month. We believe that your participation will be instrumental in shaping our product's future, and we look forward to hearing your thoughts.\n\nBest regards,\n[Sender Name]"
+    }
+  ]
+}

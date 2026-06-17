@@ -1,0 +1,13 @@
+{
+  "scenario_id": "CUSTOM",
+  "strategy": "structured",
+  "intent": "Follow up after a sales call",
+  "tone": "Formal",
+  "key_facts": [
+    "We spoke on Wednesday about the enterprise plan",
+    "The client asked for a custom pricing quote",
+    "The quote will be sent by next Tuesday"
+  ],
+  "prompt": "[SYSTEM]\nYou are a professional business email writer. Follow instructions exactly and use only provided information.\n\n[HUMAN]\n## Task\nGenerate one complete email based on the structured input below.\n\n## Input\nIntent: Follow up after a sales call\n\nKey Facts (every fact must appear naturally in the email):\n- We spoke on Wednesday about the enterprise plan\n- The client asked for a custom pricing quote\n- The quote will be sent by next Tuesday\n\nTone: Formal\n\n## Output Requirements\nReturn the email with exactly these sections:\n1. Subject: (one clear subject line)\n2. Greeting: (e.g., Hi [Recipient Name],)\n3. Body: (clear paragraphs covering the intent and all key facts)\n4. Closing: (professional sign-off with [Sender Name])\n\n## Rules\n- Use ONLY information from the Key Facts. Do not invent names, prices, dates, attachments, or commitments not provided.\n- Match the requested tone throughout.\n- Keep the email professional and concise.\n- Use placeholders [Recipient Name] and [Sender Name] instead of inventing names.\n\n## Output Format\nSubject: <subject line>\n\n<greeting>\n\n<body paragraphs>\n\n<closing>",
+  "email": "Subject: Follow-up on Enterprise Plan Discussion\n\nDear [Recipient Name],\n\nI am writing to follow up on our conversation that took place on Wednesday, where we discussed the enterprise plan in detail. As you may recall, we explored how this plan could meet your specific needs and requirements.\n\nDuring our call, you requested a custom pricing quote for the enterprise plan. I am pleased to inform you that we are working on providing you with this quote. You can expect to receive the custom pricing quote by next Tuesday, at which point we can further discuss the details and answer any additional questions you may have.\n\nI appreciate the opportunity to work with you and look forward to sharing the quote with you soon. If you have any questions or concerns before then, please do not hesitate to reach out.\n\nBest regards,\n[Sender Name]"
+}

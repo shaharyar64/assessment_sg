@@ -1,0 +1,115 @@
+{
+  "scenarios": [
+    {
+      "id": "SCN-001",
+      "intent": "Follow up after a product demo",
+      "key_facts": [
+        "The demo was held on Monday",
+        "The client asked for pricing details",
+        "The proposal should be shared by Friday",
+        "The client is interested in the automation dashboard"
+      ],
+      "tone": "Formal",
+      "reference_email": "Subject: Follow-Up on Product Demo\n\nHi [Recipient Name],\n\nThank you for attending the product demo on Monday. I appreciate your interest in the automation dashboard and the questions you shared during the session.\n\nAs discussed, I will prepare the pricing details and share the proposal with you by Friday.\n\nPlease let me know if there is any additional information you would like included.\n\nBest regards,\n[Sender Name]"
+    },
+    {
+      "id": "SCN-002",
+      "intent": "Apologize for a delayed response",
+      "key_facts": [
+        "The response was delayed due to internal review",
+        "The requested document is now ready",
+        "The team appreciates the client's patience"
+      ],
+      "tone": "Empathetic",
+      "reference_email": "Subject: Apology for the Delay\n\nHi [Recipient Name],\n\nI apologize for the delay in getting back to you. The response was delayed due to internal review, and I understand this may have caused inconvenience.\n\nThe requested document is now ready, and our team appreciates your patience while we completed the review.\n\nPlease let me know if you need anything else.\n\nBest regards,\n[Sender Name]"
+    },
+    {
+      "id": "SCN-003",
+      "intent": "Request proposal details",
+      "key_facts": [
+        "The client requested more detail about implementation timeline",
+        "The client wants a breakdown of support options",
+        "The response should ask for availability for a follow-up call"
+      ],
+      "tone": "Professional",
+      "reference_email": "Subject: Request for Proposal Details\n\nHi [Recipient Name],\n\nThank you for your interest. Could you please share more detail about the implementation timeline you have in mind and the support options you would like us to cover?\n\nI would also be happy to schedule a follow-up call to discuss the proposal in more detail. Please let me know your availability.\n\nBest regards,\n[Sender Name]"
+    },
+    {
+      "id": "SCN-004",
+      "intent": "Confirm next steps after a call",
+      "key_facts": [
+        "The call took place on Tuesday",
+        "The updated timeline will be sent by Wednesday",
+        "The implementation owner will be confirmed after internal review"
+      ],
+      "tone": "Professional",
+      "reference_email": "Subject: Next Steps After Our Call\n\nHi [Recipient Name],\n\nThank you for the call on Tuesday. As discussed, I will send the updated timeline by Wednesday and confirm the implementation owner after our internal review.\n\nPlease let me know if you have any questions in the meantime.\n\nBest regards,\n[Sender Name]"
+    },
+    {
+      "id": "SCN-005",
+      "intent": "Send an urgent reminder about a deadline",
+      "key_facts": [
+        "The contract review deadline is tomorrow",
+        "The legal team needs the signed copy by end of day",
+        "The sender is available for a quick call if questions arise"
+      ],
+      "tone": "Urgent",
+      "reference_email": "Subject: Reminder — Contract Review Deadline Tomorrow\n\nHi [Recipient Name],\n\nThis is a time-sensitive reminder that the contract review deadline is tomorrow. Our legal team needs the signed copy by end of day.\n\nIf you have any questions, I am available for a quick call today.\n\nBest regards,\n[Sender Name]"
+    },
+    {
+      "id": "SCN-006",
+      "intent": "Thank a colleague for project support",
+      "key_facts": [
+        "The colleague helped resolve a blocking issue last week",
+        "The project is back on schedule",
+        "The sender wants to acknowledge the extra effort"
+      ],
+      "tone": "Casual",
+      "reference_email": "Subject: Thanks for the Help Last Week\n\nHi [Recipient Name],\n\nJust wanted to say thanks for helping resolve that blocking issue last week — the project is back on schedule because of your extra effort.\n\nReally appreciate you jumping in.\n\nThanks,\n[Sender Name]"
+    },
+    {
+      "id": "SCN-007",
+      "intent": "Schedule a quarterly business review",
+      "key_facts": [
+        "The review should cover Q2 performance metrics",
+        "The client prefers a 45-minute session",
+        "Two time slots are proposed for next week"
+      ],
+      "tone": "Formal",
+      "reference_email": "Subject: Quarterly Business Review — Scheduling\n\nHi [Recipient Name],\n\nI would like to schedule our quarterly business review to cover Q2 performance metrics. I understand you prefer a 45-minute session.\n\nCould you confirm whether either of the two time slots I proposed for next week works for you?\n\nBest regards,\n[Sender Name]"
+    },
+    {
+      "id": "SCN-008",
+      "intent": "Notify about a planned maintenance window",
+      "key_facts": [
+        "Maintenance is scheduled for Saturday from 2 AM to 6 AM",
+        "The platform may be unavailable during this window",
+        "Support will monitor the rollout and share an update afterward"
+      ],
+      "tone": "Professional",
+      "reference_email": "Subject: Planned Maintenance Window — Saturday\n\nHi [Recipient Name],\n\nPlease be advised that maintenance is scheduled for Saturday from 2 AM to 6 AM. The platform may be unavailable during this window.\n\nOur support team will monitor the rollout and share an update afterward.\n\nBest regards,\n[Sender Name]"
+    },
+    {
+      "id": "SCN-009",
+      "intent": "Follow up on an unanswered RFP question",
+      "key_facts": [
+        "Question 7 about data retention was submitted on April 10",
+        "The compliance team is preparing the official answer",
+        "The full RFP response will be sent by April 20"
+      ],
+      "tone": "Formal",
+      "reference_email": "Subject: Follow-Up on RFP Question 7\n\nHi [Recipient Name],\n\nI am following up on question 7 about data retention, which was submitted on April 10. Our compliance team is preparing the official answer.\n\nWe expect to send the full RFP response by April 20.\n\nBest regards,\n[Sender Name]"
+    },
+    {
+      "id": "SCN-010",
+      "intent": "Invite a client to a product roadmap session",
+      "key_facts": [
+        "The session will preview features planned for the next release",
+        "The client feedback will help prioritize the backlog",
+        "The session is planned for the last week of the month"
+      ],
+      "tone": "Professional",
+      "reference_email": "Subject: Invitation — Product Roadmap Session\n\nHi [Recipient Name],\n\nI would like to invite you to a product roadmap session that will preview features planned for the next release. Your feedback will help us prioritize the backlog.\n\nThe session is planned for the last week of the month. Please let me know if that timeframe works for you.\n\nBest regards,\n[Sender Name]"
+    }
+  ]
+}

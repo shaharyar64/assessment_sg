@@ -1,0 +1,872 @@
+{
+  "metric_definitions": {
+    "fact_recall": {
+      "name": "Fact Recall",
+      "definition": "Measures whether the generated email includes all required key facts from the input scenario.",
+      "logic": "For each key fact, check if its meaningful content appears in the email (case-insensitive keyword overlap). Score = included_facts / total_facts. Missing facts are listed in the result."
+    },
+    "tone_and_format_accuracy": {
+      "name": "Tone and Format Accuracy",
+      "definition": "Measures whether the email matches the requested tone and contains all four expected sections: subject, greeting, body, and closing.",
+      "logic": "Format score (0.5 max): 0.125 per present section (subject, greeting, body, closing). Tone score (0.5 max): keyword/pattern match against tone-specific indicators. Final score = format_score + tone_score (0.0–1.0)."
+    },
+    "conciseness_and_fluency": {
+      "name": "Conciseness and Fluency",
+      "definition": "Measures readability, polish, and conciseness of the generated email.",
+      "logic": "Starts at 1.0 and applies penalties: excessive length (>180 words), very short body (<20 words), repeated sentences, grammar issues (double spaces, missing punctuation), or excessive wordiness patterns."
+    }
+  },
+  "scenario_scores": [
+    {
+      "scenario_id": "SCN-001",
+      "strategy": "basic",
+      "scores": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 1.0,
+        "conciseness_and_fluency": 1.0
+      },
+      "overall_average": 1.0,
+      "details": {
+        "fact_recall": {
+          "included_count": 4,
+          "total_count": 4,
+          "included": [
+            "The demo was held on Monday",
+            "The client asked for pricing details",
+            "The proposal should be shared by Friday",
+            "The client is interested in the automation dashboard"
+          ],
+          "missing": [],
+          "summary": "4 of 4 key facts included"
+        },
+        "tone_and_format_accuracy": {
+          "sections_present": {
+            "subject": true,
+            "greeting": true,
+            "body": true,
+            "closing": true
+          },
+          "missing_sections": [],
+          "tone_requested": "Formal",
+          "tone_indicator_hits": 3,
+          "format_score": 0.5,
+          "tone_score": 0.5
+        },
+        "conciseness_and_fluency": {
+          "word_count": 157,
+          "sentence_count": 7,
+          "penalties": []
+        }
+      }
+    },
+    {
+      "scenario_id": "SCN-001",
+      "strategy": "structured",
+      "scores": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 1.0,
+        "conciseness_and_fluency": 0.9
+      },
+      "overall_average": 0.9667,
+      "details": {
+        "fact_recall": {
+          "included_count": 4,
+          "total_count": 4,
+          "included": [
+            "The demo was held on Monday",
+            "The client asked for pricing details",
+            "The proposal should be shared by Friday",
+            "The client is interested in the automation dashboard"
+          ],
+          "missing": [],
+          "summary": "4 of 4 key facts included"
+        },
+        "tone_and_format_accuracy": {
+          "sections_present": {
+            "subject": true,
+            "greeting": true,
+            "body": true,
+            "closing": true
+          },
+          "missing_sections": [],
+          "tone_requested": "Formal",
+          "tone_indicator_hits": 3,
+          "format_score": 0.5,
+          "tone_score": 0.5
+        },
+        "conciseness_and_fluency": {
+          "word_count": 137,
+          "sentence_count": 8,
+          "penalties": [
+            "missing end punctuation"
+          ]
+        }
+      }
+    },
+    {
+      "scenario_id": "SCN-002",
+      "strategy": "basic",
+      "scores": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 1.0,
+        "conciseness_and_fluency": 0.9
+      },
+      "overall_average": 0.9667,
+      "details": {
+        "fact_recall": {
+          "included_count": 3,
+          "total_count": 3,
+          "included": [
+            "The response was delayed due to internal review",
+            "The requested document is now ready",
+            "The team appreciates the client's patience"
+          ],
+          "missing": [],
+          "summary": "3 of 3 key facts included"
+        },
+        "tone_and_format_accuracy": {
+          "sections_present": {
+            "subject": true,
+            "greeting": true,
+            "body": true,
+            "closing": true
+          },
+          "missing_sections": [],
+          "tone_requested": "Empathetic",
+          "tone_indicator_hits": 3,
+          "format_score": 0.5,
+          "tone_score": 0.5
+        },
+        "conciseness_and_fluency": {
+          "word_count": 94,
+          "sentence_count": 6,
+          "penalties": [
+            "missing end punctuation"
+          ]
+        }
+      }
+    },
+    {
+      "scenario_id": "SCN-002",
+      "strategy": "structured",
+      "scores": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 1.0,
+        "conciseness_and_fluency": 1.0
+      },
+      "overall_average": 1.0,
+      "details": {
+        "fact_recall": {
+          "included_count": 3,
+          "total_count": 3,
+          "included": [
+            "The response was delayed due to internal review",
+            "The requested document is now ready",
+            "The team appreciates the client's patience"
+          ],
+          "missing": [],
+          "summary": "3 of 3 key facts included"
+        },
+        "tone_and_format_accuracy": {
+          "sections_present": {
+            "subject": true,
+            "greeting": true,
+            "body": true,
+            "closing": true
+          },
+          "missing_sections": [],
+          "tone_requested": "Empathetic",
+          "tone_indicator_hits": 4,
+          "format_score": 0.5,
+          "tone_score": 0.5
+        },
+        "conciseness_and_fluency": {
+          "word_count": 145,
+          "sentence_count": 8,
+          "penalties": []
+        }
+      }
+    },
+    {
+      "scenario_id": "SCN-003",
+      "strategy": "basic",
+      "scores": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 1.0,
+        "conciseness_and_fluency": 0.75
+      },
+      "overall_average": 0.9167,
+      "details": {
+        "fact_recall": {
+          "included_count": 3,
+          "total_count": 3,
+          "included": [
+            "The client requested more detail about implementation timeline",
+            "The client wants a breakdown of support options",
+            "The response should ask for availability for a follow-up call"
+          ],
+          "missing": [],
+          "summary": "3 of 3 key facts included"
+        },
+        "tone_and_format_accuracy": {
+          "sections_present": {
+            "subject": true,
+            "greeting": true,
+            "body": true,
+            "closing": true
+          },
+          "missing_sections": [],
+          "tone_requested": "Professional",
+          "tone_indicator_hits": 5,
+          "format_score": 0.5,
+          "tone_score": 0.5
+        },
+        "conciseness_and_fluency": {
+          "word_count": 190,
+          "sentence_count": 10,
+          "penalties": [
+            "excessive length"
+          ]
+        }
+      }
+    },
+    {
+      "scenario_id": "SCN-003",
+      "strategy": "structured",
+      "scores": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 1.0,
+        "conciseness_and_fluency": 1.0
+      },
+      "overall_average": 1.0,
+      "details": {
+        "fact_recall": {
+          "included_count": 3,
+          "total_count": 3,
+          "included": [
+            "The client requested more detail about implementation timeline",
+            "The client wants a breakdown of support options",
+            "The response should ask for availability for a follow-up call"
+          ],
+          "missing": [],
+          "summary": "3 of 3 key facts included"
+        },
+        "tone_and_format_accuracy": {
+          "sections_present": {
+            "subject": true,
+            "greeting": true,
+            "body": true,
+            "closing": true
+          },
+          "missing_sections": [],
+          "tone_requested": "Professional",
+          "tone_indicator_hits": 3,
+          "format_score": 0.5,
+          "tone_score": 0.5
+        },
+        "conciseness_and_fluency": {
+          "word_count": 154,
+          "sentence_count": 8,
+          "penalties": []
+        }
+      }
+    },
+    {
+      "scenario_id": "SCN-004",
+      "strategy": "basic",
+      "scores": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 1.0,
+        "conciseness_and_fluency": 1.0
+      },
+      "overall_average": 1.0,
+      "details": {
+        "fact_recall": {
+          "included_count": 3,
+          "total_count": 3,
+          "included": [
+            "The call took place on Tuesday",
+            "The updated timeline will be sent by Wednesday",
+            "The implementation owner will be confirmed after internal review"
+          ],
+          "missing": [],
+          "summary": "3 of 3 key facts included"
+        },
+        "tone_and_format_accuracy": {
+          "sections_present": {
+            "subject": true,
+            "greeting": true,
+            "body": true,
+            "closing": true
+          },
+          "missing_sections": [],
+          "tone_requested": "Professional",
+          "tone_indicator_hits": 6,
+          "format_score": 0.5,
+          "tone_score": 0.5
+        },
+        "conciseness_and_fluency": {
+          "word_count": 121,
+          "sentence_count": 7,
+          "penalties": []
+        }
+      }
+    },
+    {
+      "scenario_id": "SCN-004",
+      "strategy": "structured",
+      "scores": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 1.0,
+        "conciseness_and_fluency": 1.0
+      },
+      "overall_average": 1.0,
+      "details": {
+        "fact_recall": {
+          "included_count": 3,
+          "total_count": 3,
+          "included": [
+            "The call took place on Tuesday",
+            "The updated timeline will be sent by Wednesday",
+            "The implementation owner will be confirmed after internal review"
+          ],
+          "missing": [],
+          "summary": "3 of 3 key facts included"
+        },
+        "tone_and_format_accuracy": {
+          "sections_present": {
+            "subject": true,
+            "greeting": true,
+            "body": true,
+            "closing": true
+          },
+          "missing_sections": [],
+          "tone_requested": "Professional",
+          "tone_indicator_hits": 6,
+          "format_score": 0.5,
+          "tone_score": 0.5
+        },
+        "conciseness_and_fluency": {
+          "word_count": 111,
+          "sentence_count": 7,
+          "penalties": []
+        }
+      }
+    },
+    {
+      "scenario_id": "SCN-005",
+      "strategy": "basic",
+      "scores": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 1.0,
+        "conciseness_and_fluency": 1.0
+      },
+      "overall_average": 1.0,
+      "details": {
+        "fact_recall": {
+          "included_count": 3,
+          "total_count": 3,
+          "included": [
+            "The contract review deadline is tomorrow",
+            "The legal team needs the signed copy by end of day",
+            "The sender is available for a quick call if questions arise"
+          ],
+          "missing": [],
+          "summary": "3 of 3 key facts included"
+        },
+        "tone_and_format_accuracy": {
+          "sections_present": {
+            "subject": true,
+            "greeting": true,
+            "body": true,
+            "closing": true
+          },
+          "missing_sections": [],
+          "tone_requested": "Urgent",
+          "tone_indicator_hits": 3,
+          "format_score": 0.5,
+          "tone_score": 0.5
+        },
+        "conciseness_and_fluency": {
+          "word_count": 124,
+          "sentence_count": 7,
+          "penalties": []
+        }
+      }
+    },
+    {
+      "scenario_id": "SCN-005",
+      "strategy": "structured",
+      "scores": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 0.8704,
+        "conciseness_and_fluency": 1.0
+      },
+      "overall_average": 0.9568,
+      "details": {
+        "fact_recall": {
+          "included_count": 3,
+          "total_count": 3,
+          "included": [
+            "The contract review deadline is tomorrow",
+            "The legal team needs the signed copy by end of day",
+            "The sender is available for a quick call if questions arise"
+          ],
+          "missing": [],
+          "summary": "3 of 3 key facts included"
+        },
+        "tone_and_format_accuracy": {
+          "sections_present": {
+            "subject": true,
+            "greeting": true,
+            "body": true,
+            "closing": true
+          },
+          "missing_sections": [],
+          "tone_requested": "Urgent",
+          "tone_indicator_hits": 2,
+          "format_score": 0.5,
+          "tone_score": 0.3704
+        },
+        "conciseness_and_fluency": {
+          "word_count": 121,
+          "sentence_count": 6,
+          "penalties": []
+        }
+      }
+    },
+    {
+      "scenario_id": "SCN-006",
+      "strategy": "basic",
+      "scores": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 0.9167,
+        "conciseness_and_fluency": 1.0
+      },
+      "overall_average": 0.9722,
+      "details": {
+        "fact_recall": {
+          "included_count": 3,
+          "total_count": 3,
+          "included": [
+            "The colleague helped resolve a blocking issue last week",
+            "The project is back on schedule",
+            "The sender wants to acknowledge the extra effort"
+          ],
+          "missing": [],
+          "summary": "3 of 3 key facts included"
+        },
+        "tone_and_format_accuracy": {
+          "sections_present": {
+            "subject": true,
+            "greeting": true,
+            "body": true,
+            "closing": true
+          },
+          "missing_sections": [],
+          "tone_requested": "Casual",
+          "tone_indicator_hits": 2,
+          "format_score": 0.5,
+          "tone_score": 0.4167
+        },
+        "conciseness_and_fluency": {
+          "word_count": 35,
+          "sentence_count": 2,
+          "penalties": []
+        }
+      }
+    },
+    {
+      "scenario_id": "SCN-006",
+      "strategy": "structured",
+      "scores": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 0.9167,
+        "conciseness_and_fluency": 0.65
+      },
+      "overall_average": 0.8556,
+      "details": {
+        "fact_recall": {
+          "included_count": 3,
+          "total_count": 3,
+          "included": [
+            "The colleague helped resolve a blocking issue last week",
+            "The project is back on schedule",
+            "The sender wants to acknowledge the extra effort"
+          ],
+          "missing": [],
+          "summary": "3 of 3 key facts included"
+        },
+        "tone_and_format_accuracy": {
+          "sections_present": {
+            "subject": true,
+            "greeting": true,
+            "body": true,
+            "closing": true
+          },
+          "missing_sections": [],
+          "tone_requested": "Casual",
+          "tone_indicator_hits": 2,
+          "format_score": 0.5,
+          "tone_score": 0.4167
+        },
+        "conciseness_and_fluency": {
+          "word_count": 8,
+          "sentence_count": 1,
+          "penalties": [
+            "body too short",
+            "missing end punctuation"
+          ]
+        }
+      }
+    },
+    {
+      "scenario_id": "SCN-007",
+      "strategy": "basic",
+      "scores": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 0.8704,
+        "conciseness_and_fluency": 1.0
+      },
+      "overall_average": 0.9568,
+      "details": {
+        "fact_recall": {
+          "included_count": 3,
+          "total_count": 3,
+          "included": [
+            "The review should cover Q2 performance metrics",
+            "The client prefers a 45-minute session",
+            "Two time slots are proposed for next week"
+          ],
+          "missing": [],
+          "summary": "3 of 3 key facts included"
+        },
+        "tone_and_format_accuracy": {
+          "sections_present": {
+            "subject": true,
+            "greeting": true,
+            "body": true,
+            "closing": true
+          },
+          "missing_sections": [],
+          "tone_requested": "Formal",
+          "tone_indicator_hits": 2,
+          "format_score": 0.5,
+          "tone_score": 0.3704
+        },
+        "conciseness_and_fluency": {
+          "word_count": 166,
+          "sentence_count": 8,
+          "penalties": []
+        }
+      }
+    },
+    {
+      "scenario_id": "SCN-007",
+      "strategy": "structured",
+      "scores": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 0.8704,
+        "conciseness_and_fluency": 1.0
+      },
+      "overall_average": 0.9568,
+      "details": {
+        "fact_recall": {
+          "included_count": 3,
+          "total_count": 3,
+          "included": [
+            "The review should cover Q2 performance metrics",
+            "The client prefers a 45-minute session",
+            "Two time slots are proposed for next week"
+          ],
+          "missing": [],
+          "summary": "3 of 3 key facts included"
+        },
+        "tone_and_format_accuracy": {
+          "sections_present": {
+            "subject": true,
+            "greeting": true,
+            "body": true,
+            "closing": true
+          },
+          "missing_sections": [],
+          "tone_requested": "Formal",
+          "tone_indicator_hits": 2,
+          "format_score": 0.5,
+          "tone_score": 0.3704
+        },
+        "conciseness_and_fluency": {
+          "word_count": 136,
+          "sentence_count": 7,
+          "penalties": []
+        }
+      }
+    },
+    {
+      "scenario_id": "SCN-008",
+      "strategy": "basic",
+      "scores": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 1.0,
+        "conciseness_and_fluency": 1.0
+      },
+      "overall_average": 1.0,
+      "details": {
+        "fact_recall": {
+          "included_count": 3,
+          "total_count": 3,
+          "included": [
+            "Maintenance is scheduled for Saturday from 2 AM to 6 AM",
+            "The platform may be unavailable during this window",
+            "Support will monitor the rollout and share an update afterward"
+          ],
+          "missing": [],
+          "summary": "3 of 3 key facts included"
+        },
+        "tone_and_format_accuracy": {
+          "sections_present": {
+            "subject": true,
+            "greeting": true,
+            "body": true,
+            "closing": true
+          },
+          "missing_sections": [],
+          "tone_requested": "Professional",
+          "tone_indicator_hits": 4,
+          "format_score": 0.5,
+          "tone_score": 0.5
+        },
+        "conciseness_and_fluency": {
+          "word_count": 133,
+          "sentence_count": 6,
+          "penalties": []
+        }
+      }
+    },
+    {
+      "scenario_id": "SCN-008",
+      "strategy": "structured",
+      "scores": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 1.0,
+        "conciseness_and_fluency": 1.0
+      },
+      "overall_average": 1.0,
+      "details": {
+        "fact_recall": {
+          "included_count": 3,
+          "total_count": 3,
+          "included": [
+            "Maintenance is scheduled for Saturday from 2 AM to 6 AM",
+            "The platform may be unavailable during this window",
+            "Support will monitor the rollout and share an update afterward"
+          ],
+          "missing": [],
+          "summary": "3 of 3 key facts included"
+        },
+        "tone_and_format_accuracy": {
+          "sections_present": {
+            "subject": true,
+            "greeting": true,
+            "body": true,
+            "closing": true
+          },
+          "missing_sections": [],
+          "tone_requested": "Professional",
+          "tone_indicator_hits": 3,
+          "format_score": 0.5,
+          "tone_score": 0.5
+        },
+        "conciseness_and_fluency": {
+          "word_count": 106,
+          "sentence_count": 6,
+          "penalties": []
+        }
+      }
+    },
+    {
+      "scenario_id": "SCN-009",
+      "strategy": "basic",
+      "scores": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 1.0,
+        "conciseness_and_fluency": 1.0
+      },
+      "overall_average": 1.0,
+      "details": {
+        "fact_recall": {
+          "included_count": 3,
+          "total_count": 3,
+          "included": [
+            "Question 7 about data retention was submitted on April 10",
+            "The compliance team is preparing the official answer",
+            "The full RFP response will be sent by April 20"
+          ],
+          "missing": [],
+          "summary": "3 of 3 key facts included"
+        },
+        "tone_and_format_accuracy": {
+          "sections_present": {
+            "subject": true,
+            "greeting": true,
+            "body": true,
+            "closing": true
+          },
+          "missing_sections": [],
+          "tone_requested": "Formal",
+          "tone_indicator_hits": 3,
+          "format_score": 0.5,
+          "tone_score": 0.5
+        },
+        "conciseness_and_fluency": {
+          "word_count": 111,
+          "sentence_count": 4,
+          "penalties": []
+        }
+      }
+    },
+    {
+      "scenario_id": "SCN-009",
+      "strategy": "structured",
+      "scores": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 0.8704,
+        "conciseness_and_fluency": 1.0
+      },
+      "overall_average": 0.9568,
+      "details": {
+        "fact_recall": {
+          "included_count": 3,
+          "total_count": 3,
+          "included": [
+            "Question 7 about data retention was submitted on April 10",
+            "The compliance team is preparing the official answer",
+            "The full RFP response will be sent by April 20"
+          ],
+          "missing": [],
+          "summary": "3 of 3 key facts included"
+        },
+        "tone_and_format_accuracy": {
+          "sections_present": {
+            "subject": true,
+            "greeting": true,
+            "body": true,
+            "closing": true
+          },
+          "missing_sections": [],
+          "tone_requested": "Formal",
+          "tone_indicator_hits": 2,
+          "format_score": 0.5,
+          "tone_score": 0.3704
+        },
+        "conciseness_and_fluency": {
+          "word_count": 102,
+          "sentence_count": 6,
+          "penalties": []
+        }
+      }
+    },
+    {
+      "scenario_id": "SCN-010",
+      "strategy": "basic",
+      "scores": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 1.0,
+        "conciseness_and_fluency": 1.0
+      },
+      "overall_average": 1.0,
+      "details": {
+        "fact_recall": {
+          "included_count": 3,
+          "total_count": 3,
+          "included": [
+            "The session will preview features planned for the next release",
+            "The client feedback will help prioritize the backlog",
+            "The session is planned for the last week of the month"
+          ],
+          "missing": [],
+          "summary": "3 of 3 key facts included"
+        },
+        "tone_and_format_accuracy": {
+          "sections_present": {
+            "subject": true,
+            "greeting": true,
+            "body": true,
+            "closing": true
+          },
+          "missing_sections": [],
+          "tone_requested": "Professional",
+          "tone_indicator_hits": 4,
+          "format_score": 0.5,
+          "tone_score": 0.5
+        },
+        "conciseness_and_fluency": {
+          "word_count": 163,
+          "sentence_count": 8,
+          "penalties": []
+        }
+      }
+    },
+    {
+      "scenario_id": "SCN-010",
+      "strategy": "structured",
+      "scores": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 0.7083,
+        "conciseness_and_fluency": 1.0
+      },
+      "overall_average": 0.9028,
+      "details": {
+        "fact_recall": {
+          "included_count": 3,
+          "total_count": 3,
+          "included": [
+            "The session will preview features planned for the next release",
+            "The client feedback will help prioritize the backlog",
+            "The session is planned for the last week of the month"
+          ],
+          "missing": [],
+          "summary": "3 of 3 key facts included"
+        },
+        "tone_and_format_accuracy": {
+          "sections_present": {
+            "subject": true,
+            "greeting": true,
+            "body": true,
+            "closing": true
+          },
+          "missing_sections": [],
+          "tone_requested": "Professional",
+          "tone_indicator_hits": 1,
+          "format_score": 0.5,
+          "tone_score": 0.2083
+        },
+        "conciseness_and_fluency": {
+          "word_count": 115,
+          "sentence_count": 6,
+          "penalties": []
+        }
+      }
+    }
+  ],
+  "strategy_averages": {
+    "basic": {
+      "metric_averages": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 0.9787,
+        "conciseness_and_fluency": 0.965
+      },
+      "overall_average": 0.9812,
+      "scenario_count": 10
+    },
+    "structured": {
+      "metric_averages": {
+        "fact_recall": 1.0,
+        "tone_and_format_accuracy": 0.9236,
+        "conciseness_and_fluency": 0.955
+      },
+      "overall_average": 0.9595,
+      "scenario_count": 10
+    }
+  }
+}
