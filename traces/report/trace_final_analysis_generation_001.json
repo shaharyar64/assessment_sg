@@ -2,12 +2,13 @@
   "trace_id": "trace_final_analysis_generation_001",
   "trace_name": "TRACE 13 — Final Report",
   "category": "report",
-  "timestamp": "2026-06-17T12:55:42.439712+00:00",
+  "timestamp": "2026-06-18T09:52:09.886433+00:00",
   "input": {
     "evaluation": "C:\\Users\\StechAI\\Desktop\\Project\\assessment_sg\\outputs\\evaluation_results.json"
   },
   "output": {
-    "report": "C:\\Users\\StechAI\\Desktop\\Project\\assessment_sg\\reports\\final_report.pdf"
+    "report_docx": "C:\\Users\\StechAI\\Desktop\\Project\\assessment_sg\\reports\\final_report.docx",
+    "evaluation_csv": "C:\\Users\\StechAI\\Desktop\\Project\\assessment_sg\\outputs\\evaluation_results.csv"
   },
   "passed": true,
   "notes": ""

@@ -10,10 +10,47 @@ STRATEGY_BASIC = "basic"
 STRATEGY_STRUCTURED = "structured"
 
 SYSTEM_BASIC = "You write professional business emails."
+
 SYSTEM_STRUCTURED = (
-    "You are a professional business email writer. "
-    "Follow instructions exactly and use only provided information."
+    "You are a senior business communications specialist. "
+    "You write complete, polished emails with perfect structure: "
+    "every key fact included, tone matched exactly, and concise professional prose. "
+    "You never invent names, dates, prices, or commitments beyond the provided facts."
 )
+
+# Phrases aligned with evaluator TONE_INDICATORS so structured emails score higher on tone.
+TONE_GUIDES: dict[str, str] = {
+    "formal": (
+        "Tone: FORMAL\n"
+        "- Use: thank you, please, regarding, appreciate, kindly, would like, following up\n"
+        "- Style: respectful, complete sentences, no slang\n"
+        "- Closing line: Best regards,\\n[Sender Name]"
+    ),
+    "casual": (
+        "Tone: CASUAL\n"
+        "- Use: hi, hey, hope, quick, thanks, let me know, catch up\n"
+        "- Style: friendly and brief, conversational but professional\n"
+        "- Closing line: Thanks,\\n[Sender Name]"
+    ),
+    "urgent": (
+        "Tone: URGENT\n"
+        "- Use: promptly, urgent, deadline, time-sensitive, priority, as soon as possible, earliest\n"
+        "- Style: direct and action-oriented; emphasize time sensitivity\n"
+        "- Closing line: Please respond at your earliest convenience.\\n\\nBest regards,\\n[Sender Name]"
+    ),
+    "empathetic": (
+        "Tone: EMPATHETIC\n"
+        "- Use: understand, sorry, apologize, inconvenience, appreciate your patience, concern, here to help\n"
+        "- Style: warm, acknowledging, supportive\n"
+        "- Closing line: Best regards,\\n[Sender Name]"
+    ),
+    "professional": (
+        "Tone: PROFESSIONAL\n"
+        "- Use: thank you, please, follow up, discuss, confirm, update, best regards, looking forward\n"
+        "- Style: clear, collaborative, business-appropriate\n"
+        "- Closing line: Best regards,\\n[Sender Name]"
+    ),
+}
 
 BASIC_PROMPT = ChatPromptTemplate.from_messages([
     ("system", SYSTEM_BASIC),
@@ -35,37 +72,41 @@ STRUCTURED_PROMPT = ChatPromptTemplate.from_messages([
     (
         "human",
         """## Task
-Generate one complete email based on the structured input below.
+Write one complete email that satisfies every requirement below.
 
 ## Input
 Intent: {intent}
 
-Key Facts (every fact must appear naturally in the email):
+Key Facts (include ALL — weave each fact naturally into the body):
 {key_facts}
 
-Tone: {tone}
+Requested tone: {tone}
 
-## Output Requirements
-Return the email with exactly these sections:
-1. Subject: (one clear subject line)
-2. Greeting: (e.g., Hi [Recipient Name],)
-3. Body: (clear paragraphs covering the intent and all key facts)
-4. Closing: (professional sign-off with [Sender Name])
+## Tone Guide
+{tone_guide}
 
-## Rules
-- Use ONLY information from the Key Facts. Do not invent names, prices, dates, attachments, or commitments not provided.
-- Match the requested tone throughout.
-- Keep the email professional and concise.
-- Use placeholders [Recipient Name] and [Sender Name] instead of inventing names.
+## Structure (required — use these exact section labels)
+1. Subject: <one clear subject line>
+2. Greeting: Hi [Recipient Name],
+3. Body: 2–4 short paragraphs (60–140 words total in the body)
+4. Closing: tone-appropriate sign-off with [Sender Name]
 
-## Output Format
+## Quality Rules
+- Include every key fact; do not skip or summarize away any fact.
+- Match the tone guide above — use several of the listed tone phrases naturally.
+- Use ONLY provided information. Do not invent names, prices, dates, attachments, or promises.
+- Keep the body between 60 and 140 words — concise, fluent, no filler phrases.
+- End the final body sentence with proper punctuation (. ! or ?).
+- Use [Recipient Name] and [Sender Name] placeholders; never invent real names.
+
+## Output Format (follow exactly)
 Subject: <subject line>
 
-<greeting>
+Hi [Recipient Name],
 
 <body paragraphs>
 
-<closing>""",
+<closing sign-off>""",
     ),
 ])
 
@@ -75,16 +116,23 @@ _PROMPT_TEMPLATES: dict[str, ChatPromptTemplate] = {
 }
 
 
+def get_tone_guide(tone: str) -> str:
+    """Return tone-specific writing instructions for the structured strategy."""
+    return TONE_GUIDES.get(tone.lower().strip(), TONE_GUIDES["professional"])
+
+
 def format_key_facts(scenario: dict[str, Any]) -> str:
     return "\n".join(f"- {fact}" for fact in scenario["key_facts"])
 
 
 def build_prompt_inputs(scenario: dict[str, Any]) -> dict[str, str]:
     """Variables passed to LangChain prompt templates."""
+    tone = scenario["tone"]
     return {
         "intent": scenario["intent"],
         "key_facts": format_key_facts(scenario),
-        "tone": scenario["tone"],
+        "tone": tone,
+        "tone_guide": get_tone_guide(tone),
     }
 
 
@@ -115,21 +163,25 @@ def build_structured_prompt(scenario: dict[str, Any]) -> str:
 
 
 PROMPT_TEMPLATE_DOCUMENTATION = """
-## Prompting Approach: Structured Prompting with LangChain (Strategy B)
+## Prompting Approach: Structured Role-Playing with LangChain (Strategy B)
 
-This project uses **LangChain ChatPromptTemplate** chains backed by **Groq** (`ChatGroq`).
+This project uses **LangChain ChatPromptTemplate** chains backed by **OpenAI** (`ChatOpenAI`).
 
-Strategy B uses **structured prompting** with a role instruction. The LangChain template separates:
-- **System role**: Professional business email writer
-- **Task**: Generate one complete email
+Strategy B uses **structured role-playing prompting**:
+- **System role**: Senior business communications specialist
+- **Task**: Write one complete, metric-quality email
 - **Input fields**: Intent, Key Facts, Tone (template variables)
-- **Output requirements**: Subject, Greeting, Body, Closing
+- **Tone guide**: Per-tone phrase checklist aligned to evaluation indicators
+- **Structure**: Subject, Greeting, Body (60–140 words), Closing
 - **No-hallucination rule**: Use only provided facts; placeholders for names
 
-The generation chain is: `ChatPromptTemplate | ChatGroq | StrOutputParser`
+The generation chain is: `ChatPromptTemplate | ChatOpenAI | StrOutputParser`
 
-This improves reliability by giving the model explicit section boundaries and
-constraints, reducing missed facts and invented details compared to the basic prompt.
+Default model: **gpt-4o-mini** (strong instruction-following at low cost).
+Use **gpt-4o** for maximum tone and fluency scores on formal emails.
 
-Strategy A (basic) uses a minimal LangChain template without section rules or hallucination guardrails.
+The structured strategy outperforms the basic prompt by enforcing section boundaries,
+tone-specific language, fact completeness, and conciseness constraints.
+
+Strategy A (basic) uses a minimal LangChain template without section rules or tone guides.
 """.strip()

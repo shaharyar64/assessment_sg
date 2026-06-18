@@ -1,4 +1,4 @@
-"""LangChain + Groq LLM client with deterministic mock mode."""
+"""LangChain + OpenAI LLM client with deterministic mock mode."""
 
 from __future__ import annotations
 
@@ -10,11 +10,13 @@ from dotenv import load_dotenv
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import Runnable
 
-from src.prompt_builder import build_prompt_inputs, get_prompt_template
+from src.prompt_builder import STRATEGY_STRUCTURED, build_prompt_inputs, get_prompt_template
 
 load_dotenv()
 
-DEFAULT_GROQ_MODEL = "llama-3.3-70b-versatile"
+# gpt-4o-mini: best cost/quality for structured email generation (instruction + tone).
+# Use gpt-4o via --model for maximum quality on formal/empathetic tone scoring.
+DEFAULT_OPENAI_MODEL = "gpt-4o-mini"
 
 
 def _tone_opening(tone: str) -> str:
@@ -92,22 +94,22 @@ def _parse_prompt_fallback(prompt: str) -> dict[str, Any]:
 
 
 class LLMClient:
-    """LangChain chain wrapper around Groq ChatGroq with mock fallback."""
+    """LangChain chain wrapper around OpenAI ChatOpenAI with mock fallback."""
 
-    def __init__(self, model: str = DEFAULT_GROQ_MODEL, mock: bool = False):
+    def __init__(self, model: str = DEFAULT_OPENAI_MODEL, mock: bool = False):
         self.model = model
-        self.mock = mock or not os.getenv("GROQ_API_KEY")
+        self.mock = mock or not os.getenv("OPENAI_API_KEY")
         self._llm = None
         self._chains: dict[str, Runnable] = {}
 
     def _get_llm(self, temperature: float = 0.3):
         if self._llm is None:
-            from langchain_groq import ChatGroq
+            from langchain_openai import ChatOpenAI
 
-            self._llm = ChatGroq(
+            self._llm = ChatOpenAI(
                 model=self.model,
                 temperature=temperature,
-                groq_api_key=os.getenv("GROQ_API_KEY"),
+                api_key=os.getenv("OPENAI_API_KEY"),
             )
         return self._llm
 
@@ -126,7 +128,7 @@ class LLMClient:
         temperature: float = 0.3,
     ) -> str:
         """
-        Generate an email using a LangChain prompt | ChatGroq | parser chain.
+        Generate an email using a LangChain prompt | ChatOpenAI | parser chain.
 
         `prompt` is optional and used only for mock mode detection when provided.
         """
@@ -134,5 +136,6 @@ class LLMClient:
             rendered = prompt or ""
             return mock_generate(rendered, scenario)
 
+        temperature = 0.2 if strategy == STRATEGY_STRUCTURED else 0.35
         chain = self._get_chain(strategy, temperature)
         return chain.invoke(build_prompt_inputs(scenario))

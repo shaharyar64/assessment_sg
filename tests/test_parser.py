@@ -28,6 +28,23 @@ def test_parse_email_without_closing():
     assert not parsed.closing
 
 
+def test_thank_you_in_body_is_not_treated_as_closing():
+    """Structured emails use tone phrases like 'Thank you' in the body."""
+    text = (
+        "Subject: Follow-Up on Demo\n\n"
+        "Hi [Recipient Name],\n\n"
+        "I am following up regarding the product demo we held on Monday. "
+        "Thank you for your interest in our automation dashboard.\n\n"
+        "As requested, I will share the proposal by Friday.\n\n"
+        "Best regards,\n[Sender Name]"
+    )
+    parsed = parse_email(text)
+    assert "automation dashboard" in parsed.body
+    assert "proposal by Friday" in parsed.body
+    assert parsed.closing.startswith("Best regards")
+    assert len(parsed.body.split()) >= 20
+
+
 def test_email_to_text_round_trip(sample_email):
     parsed = parse_email(sample_email)
     rebuilt = email_to_text(parsed)

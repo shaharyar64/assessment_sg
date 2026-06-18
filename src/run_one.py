@@ -55,8 +55,8 @@ def main() -> int:
     parser.add_argument("--mock", action="store_true", help="Use mock mode (no API call)")
     parser.add_argument(
         "--model",
-        default="llama-3.3-70b-versatile",
-        help="Groq model name",
+        default="gpt-4o-mini",
+        help="OpenAI model name (default: gpt-4o-mini; use gpt-4o for highest quality)",
     )
     parser.add_argument(
         "--output",
@@ -78,7 +78,7 @@ def main() -> int:
         return 1
 
     client = LLMClient(model=args.model, mock=args.mock)
-    mode = "mock" if client.mock else f"Groq ({args.model})"
+    mode = "mock" if client.mock else f"OpenAI ({args.model})"
     print(f"Generating email using {mode} / strategy: {args.strategy}\n", file=sys.stderr)
 
     try:

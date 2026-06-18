@@ -25,10 +25,11 @@ GREETING_PATTERN = re.compile(
     re.IGNORECASE | re.MULTILINE,
 )
 
+# Anchor to end of email only — "Thank you" mid-body must not be treated as a sign-off.
 CLOSING_PATTERN = re.compile(
-    r"(Best regards|Sincerely|Kind regards|Warm regards|Thanks|Thank you|Regards|"
-    r"Yours sincerely|Yours truly|Respectfully)[^\n]*(?:\n\[?[^\]]+\]?)?$",
-    re.IGNORECASE | re.MULTILINE,
+    r"(Best regards|Sincerely|Kind regards|Warm regards|Thanks,|Thank you,|Regards,|"
+    r"Yours sincerely|Yours truly|Respectfully)[^\n]*(?:\n\s*\[?[^\]]+\]?)?\s*\Z",
+    re.IGNORECASE | re.DOTALL,
 )
 
 

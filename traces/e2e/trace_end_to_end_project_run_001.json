@@ -2,7 +2,7 @@
   "trace_id": "trace_end_to_end_project_run_001",
   "trace_name": "End-to-End Pipeline",
   "category": "e2e",
-  "timestamp": "2026-06-17T12:55:42.440505+00:00",
+  "timestamp": "2026-06-18T09:52:09.887713+00:00",
   "input": {
     "scenarios": 10,
     "strategies": 2
@@ -11,7 +11,7 @@
     "generated_emails": "C:\\Users\\StechAI\\Desktop\\Project\\assessment_sg\\outputs\\generated_emails.json",
     "evaluation_results": "C:\\Users\\StechAI\\Desktop\\Project\\assessment_sg\\outputs\\evaluation_results.json",
     "comparison_summary": "C:\\Users\\StechAI\\Desktop\\Project\\assessment_sg\\outputs\\comparison_summary.json",
-    "recommended_strategy": "basic"
+    "recommended_strategy": "structured"
   },
   "passed": true,
   "notes": ""

@@ -2,7 +2,7 @@
   "trace_id": "trace_empty_facts_001",
   "trace_name": "TRACE 03 — Empty Key Facts Rejected",
   "category": "validation",
-  "timestamp": "2026-06-17T12:55:22.088083+00:00",
+  "timestamp": "2026-06-18T09:51:21.898580+00:00",
   "input": {
     "intent": "Confirm next steps after a call",
     "key_facts": [],

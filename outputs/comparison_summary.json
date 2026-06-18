@@ -1,26 +1,26 @@
 {
-  "recommended_strategy": "basic",
-  "reason": "Highest overall average (0.98 vs 0.96) and better scores across the three custom metrics.",
-  "biggest_failure_mode": "Lowest average on Tone and Format Accuracy (0.92): inconsistent formatting and tone misalignment.",
-  "production_recommendation": "Use basic — more complete, tone-accurate, and polished emails across the same 10 scenarios.",
+  "recommended_strategy": "structured",
+  "reason": "Highest overall average (0.98 vs 0.92) and leads on 2 of 3 custom metrics.",
+  "biggest_failure_mode": "Lowest average on Tone and Format Accuracy (0.85): inconsistent formatting and tone misalignment.",
+  "production_recommendation": "Use structured — more complete, tone-accurate, and polished emails across the same 10 scenarios.",
   "overall_averages": {
-    "basic": 0.9812,
-    "structured": 0.9595
+    "structured": 0.9772,
+    "basic": 0.9164
   },
   "metric_comparison": {
     "Fact Recall": {
-      "basic": 1.0,
-      "structured": 1.0
+      "structured": 0.9667,
+      "basic": 1.0
     },
     "Tone and Format Accuracy": {
-      "basic": 0.9787,
-      "structured": 0.9236
+      "structured": 1.0,
+      "basic": 0.8491
     },
     "Conciseness and Fluency": {
-      "basic": 0.965,
-      "structured": 0.955
+      "structured": 0.965,
+      "basic": 0.9
     }
   },
-  "winner": "basic",
-  "loser": "structured"
+  "winner": "structured",
+  "loser": "basic"
 }

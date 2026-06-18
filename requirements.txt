@@ -1,6 +1,6 @@
 langchain
-langchain-groq
+langchain-openai
 langchain-core
-reportlab
+python-docx
 python-dotenv
 pytest

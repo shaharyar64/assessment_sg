@@ -20,7 +20,7 @@ def test_format_key_facts_bulleted(valid_scenario):
 def test_structured_prompt_has_no_hallucination_rules(valid_scenario):
     prompt = build_prompt(valid_scenario, STRATEGY_STRUCTURED)
     assert "Do not invent" in prompt
-    assert "## Rules" in prompt
+    assert "## Quality Rules" in prompt
 
 
 def test_basic_prompt_has_no_structured_sections(valid_scenario):
@@ -30,7 +30,15 @@ def test_basic_prompt_has_no_structured_sections(valid_scenario):
 
 
 def test_build_prompt_inputs_keys(valid_scenario):
-    assert set(build_prompt_inputs(valid_scenario).keys()) == {"intent", "key_facts", "tone"}
+    assert set(build_prompt_inputs(valid_scenario).keys()) == {
+        "intent", "key_facts", "tone", "tone_guide",
+    }
+
+
+def test_structured_prompt_includes_tone_guide(valid_scenario):
+    prompt = build_prompt(valid_scenario, STRATEGY_STRUCTURED)
+    assert "## Tone Guide" in prompt
+    assert "thank you" in prompt.lower()
 
 
 def test_unknown_strategy_raises(valid_scenario):

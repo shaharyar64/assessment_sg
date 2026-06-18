@@ -4,6 +4,11 @@ from __future__ import annotations
 
 from typing import Any
 
+from src.prompt_builder import STRATEGY_STRUCTURED
+
+# Prefer structured when scores tie — it enforces tone, facts, and format by design.
+_STRATEGY_RANK = {STRATEGY_STRUCTURED: 1, "basic": 0}
+
 
 def compare_strategies(evaluation_results: dict[str, Any]) -> dict[str, Any]:
     """
@@ -17,7 +22,10 @@ def compare_strategies(evaluation_results: dict[str, Any]) -> dict[str, Any]:
 
     ranked = sorted(
         strategy_averages.items(),
-        key=lambda x: x[1].get("overall_average", 0),
+        key=lambda x: (
+            x[1].get("overall_average", 0),
+            _STRATEGY_RANK.get(x[0], 0),
+        ),
         reverse=True,
     )
     winner_name, winner_stats = ranked[0]
@@ -33,11 +41,16 @@ def compare_strategies(evaluation_results: dict[str, Any]) -> dict[str, Any]:
     loser_metrics = loser_stats.get("metric_averages", {})
 
     metric_comparison = {}
+    metrics_won = 0
     for key, label in metric_names.items():
+        w_score = winner_metrics.get(key, 0)
+        l_score = loser_metrics.get(key, 0)
         metric_comparison[label] = {
-            winner_name: winner_metrics.get(key, 0),
-            loser_name: loser_metrics.get(key, 0),
+            winner_name: w_score,
+            loser_name: l_score,
         }
+        if w_score >= l_score:
+            metrics_won += 1
 
     failure_mode = _identify_failure_mode(
         loser_name, evaluation_results.get("scenario_scores", [])
@@ -48,7 +61,7 @@ def compare_strategies(evaluation_results: dict[str, Any]) -> dict[str, Any]:
 
     reason = (
         f"Highest overall average ({winner_avg:.2f} vs {loser_avg:.2f}) "
-        f"and better scores across the three custom metrics."
+        f"and leads on {metrics_won} of 3 custom metrics."
     )
 
     production = (

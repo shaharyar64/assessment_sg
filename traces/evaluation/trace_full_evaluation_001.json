@@ -2,7 +2,7 @@
   "trace_id": "trace_full_evaluation_001",
   "trace_name": "TRACE 11 — Evaluation Results File",
   "category": "evaluation",
-  "timestamp": "2026-06-17T12:55:42.408007+00:00",
+  "timestamp": "2026-06-18T09:52:09.721598+00:00",
   "input": {
     "emails_evaluated": 20
   },
@@ -11,19 +11,19 @@
       "basic": {
         "metric_averages": {
           "fact_recall": 1.0,
-          "tone_and_format_accuracy": 0.9787,
-          "conciseness_and_fluency": 0.965
+          "tone_and_format_accuracy": 0.8491,
+          "conciseness_and_fluency": 0.9
         },
-        "overall_average": 0.9812,
+        "overall_average": 0.9164,
         "scenario_count": 10
       },
       "structured": {
         "metric_averages": {
-          "fact_recall": 1.0,
-          "tone_and_format_accuracy": 0.9236,
-          "conciseness_and_fluency": 0.955
+          "fact_recall": 0.9667,
+          "tone_and_format_accuracy": 1.0,
+          "conciseness_and_fluency": 0.965
         },
-        "overall_average": 0.9595,
+        "overall_average": 0.9772,
         "scenario_count": 10
       }
     }

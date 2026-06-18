@@ -179,7 +179,8 @@ def score_conciseness_and_fluency(email_text: str) -> MetricResult:
         score -= 0.25
         penalties.append("repeated sentences")
 
-    if "  " in email_text:
+    normalized = "\n".join(line.rstrip() for line in email_text.splitlines())
+    if "  " in normalized:
         score -= 0.15
         penalties.append("double spaces")
 

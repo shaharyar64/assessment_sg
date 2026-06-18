@@ -2,7 +2,7 @@
   "trace_id": "trace_scenarios_load_001",
   "trace_name": "TRACE 06 — Ten Evaluation Scenarios",
   "category": "batch",
-  "timestamp": "2026-06-17T12:55:22.089357+00:00",
+  "timestamp": "2026-06-18T09:51:21.900195+00:00",
   "input": {
     "path": "C:\\Users\\StechAI\\Desktop\\Project\\assessment_sg\\data\\scenarios.json"
   },

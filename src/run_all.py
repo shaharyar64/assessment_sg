@@ -12,11 +12,12 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from src.compare import compare_strategies
+from src.evaluation_export import export_evaluation_csv
 from src.evaluator import METRIC_DEFINITIONS, evaluate_email
 from src.generator import generate_batch, load_scenarios, save_generated_emails
 from src.llm_client import LLMClient
 from src.prompt_builder import STRATEGY_BASIC, STRATEGY_STRUCTURED
-from src.report import generate_report
+from src.report import generate_report_docx
 from src.trace_logger import log_trace
 from src.validation import ValidationError, validate_scenario
 
@@ -114,8 +115,8 @@ def main() -> int:
     parser.add_argument("--mock", action="store_true", help="Use mock LLM (no API key needed)")
     parser.add_argument(
         "--model",
-        default="llama-3.3-70b-versatile",
-        help="Groq model name (e.g. llama-3.3-70b-versatile, llama-3.1-8b-instant)",
+        default="gpt-4o-mini",
+        help="OpenAI model name (default: gpt-4o-mini; use gpt-4o for highest quality)",
     )
     parser.add_argument("--skip-report", action="store_true", help="Skip PDF report generation")
     args = parser.parse_args()
@@ -149,7 +150,7 @@ def main() -> int:
     )
 
     client = LLMClient(model=args.model, mock=args.mock)
-    mode = "mock" if client.mock else f"LangChain + Groq ({args.model})"
+    mode = "mock" if client.mock else f"LangChain + OpenAI ({args.model})"
     print(f"\n[3/6] Generating emails (Strategy A + B) using {mode}...")
 
     generated = generate_batch(
@@ -209,27 +210,40 @@ def main() -> int:
         True,
     )
 
+    csv_path = outputs_dir / "evaluation_results.csv"
+    export_evaluation_csv(evaluation, csv_path)
+    print(f"  Saved evaluation CSV to {csv_path}")
+
     if not args.skip_report:
-        print("\n[6/6] Generating final PDF report...")
-        report_path = reports_dir / "final_report.pdf"
-        generate_report(
+        print("\n[6/6] Generating reports...")
+        report_docx = reports_dir / "final_report.docx"
+        saved_report = generate_report_docx(
             evaluation,
             comparison,
-            report_path,
+            report_docx,
             sample_scenario=scenarios[0],
+            scenarios_path=args.scenarios,
         )
-        print(f"  Report saved to {report_path}")
+        print(f"  Final report (Word): {saved_report}")
+        if saved_report != report_docx:
+            print(
+                "  Note: Close final_report.docx in Word, then re-run to overwrite it. "
+                f"Report saved as {saved_report.name} instead."
+            )
 
         log_trace(
             "trace_final_analysis_generation_001",
             "TRACE 13 — Final Report",
             "report",
             {"evaluation": str(eval_path)},
-            {"report": str(report_path)},
-            report_path.exists(),
+            {
+                "report_docx": str(saved_report),
+                "evaluation_csv": str(csv_path),
+            },
+            saved_report.exists(),
         )
     else:
-        print("\n[6/6] Skipped PDF report (--skip-report).")
+        print("\n[6/6] Skipped reports (--skip-report).")
 
     log_trace(
         "trace_end_to_end_project_run_001",
@@ -250,8 +264,9 @@ def main() -> int:
     print(f"  Generated emails:  {emails_path}")
     print(f"  Evaluation:        {eval_path}")
     print(f"  Comparison:        {comparison_path}")
+    print(f"  Evaluation CSV:    {outputs_dir / 'evaluation_results.csv'}")
     if not args.skip_report:
-        print(f"  Final report:      {reports_dir / 'final_report.pdf'}")
+        print(f"  Final report (Word): {reports_dir / 'final_report.docx'}")
     print("=" * 60)
 
     return 0

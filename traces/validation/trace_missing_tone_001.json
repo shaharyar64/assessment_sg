@@ -2,7 +2,7 @@
   "trace_id": "trace_missing_tone_001",
   "trace_name": "TRACE 02 — Missing Required Field",
   "category": "validation",
-  "timestamp": "2026-06-17T12:55:22.087299+00:00",
+  "timestamp": "2026-06-18T09:51:21.897787+00:00",
   "input": {
     "intent": "Apologize for a delayed response",
     "key_facts": [
